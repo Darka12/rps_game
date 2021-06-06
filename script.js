@@ -6,12 +6,14 @@ function computerPlay() {
 
 computerPlay();
 
-const playerSelection = prompt("Please enter your choice: ");
+const playerSelection = "rock";
 const computerSelection = computerPlay();
 
 function singleRound(playerSelection, computerSelection) {
-    
+
 }
 
 
-    
+// Play 1 round only
+// if player selection is the same as computer selection (case insensitive)
+// Return string    
