@@ -1,19 +1,23 @@
+
 function computerPlay() {
-    let computerChoices = ["Rock", "Paper", "Scissors"];
-    let choice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    console.log(choice);
+    // Array of the possible options the computer is allowed to choose from
+    const computerChoices = ["rock", "paper", "scissors"];
+    // Chooses a random string out of the array above
+    const choice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    // Calls the choice variable
+    return choice;
 }
 
-computerPlay();
-
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-
-function singleRound(playerSelection, computerSelection) {
-
-}
+// Logs the result of the function.... it works 
+console.log(computerPlay()); 
 
 
-// Play 1 round only
-// if player selection is the same as computer selection (case insensitive)
-// Return string    
+
+
+
+
+
+
+
+
+  
