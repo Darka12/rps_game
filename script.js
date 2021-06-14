@@ -48,6 +48,16 @@ function singleRound(playerSelection, computerSelection) {
 // Logs the relevent return string in the console
 console.log(singleRound(playerSelection, computerSelection));
 
+// variables: player score and computer score should obviously start at 0
+let playerScore = 0;
+let computerScore = 0;
+
+// Function to loop through the single round function 5 times and keep score
+function mainGame() {
+    for (i = 0; i < 5; i++) {
+
+    }
+}
 
 
 
