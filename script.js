@@ -49,7 +49,7 @@ function mainGame() {
     for (i = 0; i < 5; i++) {
         // What we want the game to do 5 times goes in here (so the prompt and the computerPlay function)
         // Allows user input through the prompt command and converts anything typed into the box to lower case
-        let playerSelection = prompt("please enter rock, paper, or scissors!").toLowerCase();
+        //let playerSelection = prompt("please enter rock, paper, or scissors!").toLowerCase();
         // computerSelection is the result of the computerPlay function
         const computerSelection = computerPlay();
         // Logs the user input text into the console
