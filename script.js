@@ -9,9 +9,9 @@ function computerPlay() {
     return choice;
 } 
 
-    
-
     const allButtons = document.querySelectorAll(".buttons");
+
+    
     allButtons.forEach(e => {e.addEventListener('click', function() {
         const computerSelection = computerPlay();
         console.log(computerSelection);
@@ -46,9 +46,27 @@ function computerPlay() {
 })
 })
 
-      let playerScore = 0;
-      let computerScore = 0;  
+// variables: player score and computer score should obviously start at 0
+let playerScore = 0;
+let computerScore = 0;  
       
+
+  // Function to loop through the single round function 5 times and keep score
+function mainGame() {
+    for (i = 0; i < 5; i++) {
+        // What we want the game to do 5 times goes in here (so the prompt and the computerPlay function)
+        // Allows user input through the prompt command and converts anything typed into the box to lower case
+        let playerSelection = prompt("please enter rock, paper, or scissors!").toLowerCase();
+        // computerSelection is the result of the computerPlay function
+        const computerSelection = computerPlay();
+    }
+    // Decides who won
+    if (playerScore > computerScore) {
+        return "Congratulations, you win the game!";
+    } else if (computerScore > playerScore) {
+        return "Unlucky, you lost!";
+    }
+}  
 
 
 
