@@ -9,12 +9,9 @@ function computerPlay() {
     return choice;
 } 
 
-    const allButtons = document.querySelectorAll(".buttons");
 
     
-    allButtons.forEach(e => {e.addEventListener('click', function() {
-        const computerSelection = computerPlay();
-        console.log(computerSelection);
+ function singleRound(playerSelection, computerSelection) {      
     if (computerSelection === "rock" && e.innerHTML === "Rock") {
         document.getElementById("result").innerHTML = "It's a tie this round!";
     } else if (computerSelection === "rock" && e.innerHTML === "Paper") {
@@ -42,9 +39,8 @@ function computerPlay() {
         ++computerScore;
         document.getElementById("result").innerHTML = "You lose this round!";
     }
-    console.log(playerScore, computerScore);
-})
-})
+ } 
+
 
 // variables: player score and computer score should obviously start at 0
 let playerScore = 0;
@@ -54,9 +50,10 @@ let computerScore = 0;
   // Function to loop through the single round function 5 times and keep score
 function mainGame() {
     for (i = 0; i < 5; i++) {
-        // What we want the game to do 5 times goes in here (so the prompt and the computerPlay function)
-        // Allows user input through the prompt command and converts anything typed into the box to lower case
-        let playerSelection = prompt("please enter rock, paper, or scissors!").toLowerCase();
+        // What we want the game to do 5 times goes in here
+        const playerSelection = document.querySelectorAll(".buttons").forEach(e => {e.addEventListener('click', function(){
+            console.log(e.innerHTML);
+        })});
         // computerSelection is the result of the computerPlay function
         const computerSelection = computerPlay();
     }
@@ -68,7 +65,7 @@ function mainGame() {
     }
 }  
 
-
+console.log(computerPlay());
 
 
 
