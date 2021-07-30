@@ -1,31 +1,61 @@
 
-const computersChoiceDisplay = document.getElementById('computers-choice');
-const usersChoiceDisplay = document.getElementById('users-choice');
-const result = document.getElementById('result');
+const computerChoiceDisplay = document.getElementById('computer-choice');
+const userChoiceDisplay = document.getElementById('user-choice');
+const resultDisplay = document.getElementById('result');
 const allOptions = document.querySelectorAll('button');
-let usersChoice;
+let userChoice;
 let computerChoice;
+let result;
+let playerScore = 0;
+let computerScore = 0;
 
 allOptions.forEach(option => option.addEventListener('click', (e) => {
-    usersChoice = e.target.id; 
-    usersChoiceDisplay.innerHTML = usersChoice;  
-    computerPlay()
+  userChoice = e.target.id;
+  userChoiceDisplay.innerHTML = userChoice;
+  computerSelection()
+  singleRound()
+  console.log(playerScore, computerScore);
 }))
 
+function computerSelection() {
+  const randomNumber = Math.floor(Math.random() * 3) + 1 
+  
+  if (randomNumber === 1) {
+    computerChoice = "rock";
+  }
+  if (randomNumber === 2) {
+    computerChoice = "scissors";
+  }
+  if (randomNumber === 3) {
+    computerChoice = "paper";
+  }
+  computerChoiceDisplay.innerHTML = computerChoice;
+}
 
-// Function to randomly pick out of the available options
-function computerPlay() {
-    // Array of the possible options the computer is allowed to choose from
-    const computerChoices = ["rock", "paper", "scissors"];
-    // Chooses a random string out of the array above
-    const computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    // Calls the choice variable
-    computersChoiceDisplay.innerHTML = computerChoice;
-    
-} 
-
-
-
+function singleRound() {
+  if (computerChoice === userChoice) {
+    result = "It's a draw this round!";
+  } else if (computerChoice === "rock" && userChoice === "paper") {
+    playerScore++;
+    result = "You win this round!";
+  } else if (computerChoice === "rock" && userChoice === "scissors") {
+    computerScore++;
+    result = "You lost this round!";
+  } else if (computerChoice === 'paper' && userChoice === "scissors") {
+    playerScore++;
+    result = "You win this round!";
+  } else if (computerChoice === 'paper' && userChoice === "rock") {
+    computerScore++;
+    result = "You lost this round!";
+  } else if (computerChoice === 'scissors' && userChoice === "rock") {
+    playerScore++;
+    result = "You win this round!";
+  } else if (computerChoice === 'scissors' && userChoice === "paper") {
+    computerScore++;
+    result = "You lost this round!";
+  }
+  resultDisplay.innerHTML = result;
+}
 
 
 
