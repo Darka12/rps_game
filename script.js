@@ -8,12 +8,14 @@ let computerChoice;
 let result;
 let playerScore = 0;
 let computerScore = 0;
+const gameWinner = document.getElementById('winner');
 
 allOptions.forEach(option => option.addEventListener('click', (e) => {
   userChoice = e.target.id;
   userChoiceDisplay.innerHTML = userChoice;
   computerSelection()
   singleRound()
+  endGame()
   console.log(playerScore, computerScore);
 }))
 
@@ -58,7 +60,13 @@ function singleRound() {
 }
 
 
-
+function endGame() {
+  if (playerScore == 5) {
+    gameWinner.innerHTML = "You";
+  } else if (computerScore == 5) {
+    gameWinner.innerHTML = "Computer";
+  }
+}
 
 
 
