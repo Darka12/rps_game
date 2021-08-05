@@ -63,8 +63,10 @@ function singleRound() {
 function endGame() {
   if (playerScore == 5) {
     gameWinner.innerHTML = "You";
+    window.setTimeout(function(){location.reload()},5000)
   } else if (computerScore == 5) {
     gameWinner.innerHTML = "Computer";
+    window.setTimeout(function(){location.reload()},5000)
   }
 }
 
