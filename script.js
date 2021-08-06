@@ -65,10 +65,16 @@ function singleRound() {
 
 function endGame() {
   if (playerScore == 5) {
-    gameWinner.innerHTML = "You";
+    document.getElementById("rock").style.display = "none";  
+    document.getElementById("paper").style.display = "none";
+    document.getElementById("scissors").style.display = "none";
+    gameWinner.innerHTML = "YOU WIN THE GAME! New game starts in 5 seconds.";
     window.setTimeout(function(){location.reload()},5000)
   } else if (computerScore == 5) {
-    gameWinner.innerHTML = "Computer";
+    document.getElementById("rock").style.display = "none";
+    document.getElementById("paper").style.display = "none";
+    document.getElementById("scissors").style.display = "none"; 
+    gameWinner.innerHTML = "YOU LOST! New game starts in 5 seconds.";
     window.setTimeout(function(){location.reload()},5000)
   }
 }
