@@ -9,6 +9,8 @@ let result;
 let playerScore = 0;
 let computerScore = 0;
 const gameWinner = document.getElementById('winner');
+const computerLog = document.getElementById('computer-score');
+const playerLog = document.getElementById('player-score');
 
 allOptions.forEach(option => option.addEventListener('click', (e) => {
   userChoice = e.target.id;
@@ -16,7 +18,8 @@ allOptions.forEach(option => option.addEventListener('click', (e) => {
   computerSelection()
   singleRound()
   endGame()
-  console.log(playerScore, computerScore);
+  computerLog.innerHTML = computerScore;
+  playerLog.innerHTML = playerScore;
 }))
 
 function computerSelection() {

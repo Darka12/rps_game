@@ -1,4 +1,5 @@
 body {
+    background-color: #3657d9;
 }
 
 h1 {
@@ -6,6 +7,7 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: 1.5em;
+    color: white;
 }
 
 div {
@@ -20,7 +22,10 @@ button {
     width: 150px;
     height: 75px;
     font-size: 22px;
-    border-radius: 3px;
+    border-radius: 25px;
+    background-color: green;
+    border-style: hidden;
+    color: white;
 }
 
 button:hover {
